@@ -22,13 +22,11 @@ for n1 in range(WINDINGS_PER_COIL//2):
         coil1.add(winding)
 print(f"Using {windingcount} windings per coil")
 
-#coil1.position = (0,0,5)
-#coil2 = coil1.copy(position=(0,0,-5))
+coil1.position = (0,0,INNER_COIL_DIAMETER/4)
+coil2 = coil1.copy(position=(0,0,-INNER_COIL_DIAMETER/4))
+helmholtz = magpy.Collection(coil1, coil2)
 
-#helmholtz = magpy.Collection(coil1, coil2)
-
-#helmholtz.show()
-coil1.show()
+helmholtz.show()
 
 quit()
 
