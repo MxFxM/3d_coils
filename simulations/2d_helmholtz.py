@@ -47,7 +47,6 @@ coil3.position = (0, 0, INNER_COIL_DIAMETER/4000)
 coil3.rotate_from_angax(-90, "x", anchor=0, start=0)
 coil4 = coil3.copy(position=(0, -INNER_COIL_DIAMETER/4000, 0))
 helmholtz2 = magpy.Collection(coil3, coil4)
-helmholtz2.show()
 
 
 
@@ -95,7 +94,7 @@ plt.colorbar(sp.lines, ax=ax, label='(T)')
 ax2 = axes[1]
 
 # Compute field and plot the coil pair field on yz-grid
-grid = np.mgrid[0:0:1j, -0.1:0.1:20j, -0.1:0.1:20j].T[:,:,0]
+grid = np.mgrid[0:0:1j, -0.1:0.1:40j, -0.1:0.1:40j].T[:,:,0]
 _, Y, Z = np.moveaxis(grid, 2, 0)
 
 B = magpy.getB(helmholtz_2d, grid)
